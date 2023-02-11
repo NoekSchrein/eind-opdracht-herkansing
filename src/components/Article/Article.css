@@ -1,0 +1,17 @@
+.uneven-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px;
+}
+
+.even-article {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: 15px;
+}
+
+.article-img {
+    width: 400px;
+}

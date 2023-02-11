@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #373636;
+    background-color: #FBFAF1;
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-basis: 1400px;
+}
+
+h1 {
+    font-family: 'Rock Salt', cursive;
+    font-size: 50px;
+    font-weight: lighter;
+    color: #FBFAF1;
+}
+
+h4 {
+    font-size: 18px;
+}
