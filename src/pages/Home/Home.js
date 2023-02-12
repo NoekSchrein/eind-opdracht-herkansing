@@ -7,9 +7,11 @@ import MocktailCard from "../../components/MocktailCard/MocktailCard";
 import Button from "../../components/Button/Button";
 import axios from "axios";
 
+const apiKey = "9973533"
+
 
 function Home() {
-    const [mocktailRecipes, setMocktailRecipes] = useState({});
+    const [mocktailRecipes, setMocktailRecipes] = useState([]);
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
@@ -20,7 +22,7 @@ function Home() {
             try {
                 toggleError(false);
 
-                const result = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a");
+                const result = await axios.get(`www.thecocktaildb.com/api/json/v2/${apiKey}/latest.php`);
                 console.log(result.data.drinks);
                 const mocktailList = result.data.drinks.filter((oneMocktail) => {
                     return oneMocktail.strAlcoholic.includes("Non alcoholic");
