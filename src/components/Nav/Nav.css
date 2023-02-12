@@ -18,19 +18,20 @@
     color: #F6F4B8;
     text-transform: uppercase;
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 700;
     flex-shrink: 2;
 }
 
 .inner-container a:hover {
-    text-decoration: underline;
+    color: #FEC36E;
 }
 
 .nav-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-basis: 500px;
+    align-items: center;
+    flex-basis: 600px;
 }
 
 .nav-list li {

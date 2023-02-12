@@ -1,11 +1,12 @@
 import React from 'react';
 import Button from "../Button/Button";
 import "./Article.css";
+import "../Button/Button.css";
 
 const Article = ({className, articleTitle, articleText, buttonText, imageSrc, imageAlt }) => {
     return (
         <article className= {className}>
-            <div>
+            <div className="article-text">
                 <h4>
                     {articleTitle}
                 </h4>

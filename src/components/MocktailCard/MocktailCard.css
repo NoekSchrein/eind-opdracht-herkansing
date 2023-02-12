@@ -1,0 +1,35 @@
+.mocktail-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.mocktail-card-image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.mocktail-card-image:hover {
+    transform: scale(1.2);
+    z-index: 5;
+}
+
+.mocktail-card-title {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000;
+    margin: 0.5rem;
+}
+
+.mocktail-card-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mocktail-card-link:visited {
+    text-decoration: none;
+    color: #000000;
+}

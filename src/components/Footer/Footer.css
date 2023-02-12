@@ -1,0 +1,19 @@
+.inner-footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    flex-basis: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    color: #FBFAF1;
+    background: #EA4C89;
+    padding: 1rem;
+}
