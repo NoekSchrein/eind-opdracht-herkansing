@@ -1,19 +1,22 @@
-.nav-outer-container {
-    height: 120px;
-    background: rgb(254,88,160);
-    background: radial-gradient(circle, rgba(254,88,160,1) 0%, rgba(184,51,106,1) 100%);
+.inner-nav-container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: stretch;
+    flex-basis: 1400px;
+    margin: 0 15px;
 }
 
-.nav-inner-container {
-    flex-basis: 1400px;
+.navigation {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin: 0 25px;
 }
 
-.inner-container a,
-.inner-container a:visited {
+.navigation a,
+.navigation a:visited {
     text-decoration: none;
     color: #F6F4B8;
     text-transform: uppercase;

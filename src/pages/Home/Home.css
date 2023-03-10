@@ -1,33 +1,20 @@
-.articles-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .bottom-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     background: #FEC36E;
+    width: 100%;
+    margin: 0;
     padding-bottom: 3rem;
+    border: 5px dotted #f89102;
 }
 
 .bottom-section-cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem;
     flex-wrap: wrap;
 }
 
 .bottom-section-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #EA4C89;
-    height: 45px;
-    width: 350px;
-    color: #FBFAF1;
-    border-radius: 8px;
+
 }

@@ -11,9 +11,14 @@
     object-fit: cover;
 }
 
-.mocktail-card-image:hover {
+.mocktail-card-link:hover {
+    background-color: #FEC36E;
+    padding: 10px 10px 0;
     transform: scale(1.2);
     z-index: 5;
+}
+.mocktail-card-link:hover h4 {
+    color: #EA4C89;
 }
 
 .mocktail-card-title {

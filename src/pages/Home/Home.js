@@ -6,6 +6,7 @@ import Article from "../../components/Article/Article";
 import MocktailCard from "../../components/MocktailCard/MocktailCard";
 import Button from "../../components/Button/Button";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const apiKey = "9973533"
 
@@ -14,6 +15,7 @@ function Home() {
     const [mocktailRecipes, setMocktailRecipes] = useState([]);
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchData() {
@@ -22,8 +24,8 @@ function Home() {
             try {
                 toggleError(false);
 
-                const result = await axios.get(`www.thecocktaildb.com/api/json/v2/${apiKey}/latest.php`);
-                console.log(result.data.drinks);
+                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?f=a`);
+                // console.log(result.data.drinks);
                 const mocktailList = result.data.drinks.filter((oneMocktail) => {
                     return oneMocktail.strAlcoholic.includes("Non alcoholic");
                     });
@@ -40,7 +42,7 @@ function Home() {
         fetchData();
     }, [])
     return (
-        <div className="outer-container">
+        <div className="inner-container">
             {loading && <span>
                 Loading...
             </span>}
@@ -50,7 +52,6 @@ function Home() {
 
 
             <main className="inner-container">
-                <div className="articles-container">
                     <Article
                         className="uneven-article"
                         articleTitle="De populairste mocktails"
@@ -58,6 +59,7 @@ function Home() {
                         buttonText="recepten"
                         imageSrc={populairMocktails}
                         imageAlt="populaire mocktails"
+                        clickHandler={(() => navigate("/mocktails/popular"))}
                     />
                     <Article
                         className="even-article"
@@ -67,7 +69,7 @@ function Home() {
                         imageSrc={winterMocktails}
                         imageAlt="winter mocktails"/>
 
-                    <h2 className="bottom-section-header">Nieuwste mocktail recepten</h2>
+                    <h3 className="bottom-section-header">Nieuwste mocktail recepten</h3>
                     <section className="bottom-section">
                         <div className="bottom-section-cards">
                             {mocktailRecipes.slice(0, 3).map((oneRecipe) => {
@@ -76,6 +78,7 @@ function Home() {
                                         imageSrc={oneRecipe.strDrinkThumb}
                                         imageAlt={oneRecipe.strDrink}
                                         mocktailName={oneRecipe.strDrink}
+                                        mocktailLink={`/mocktails/${mocktailRecipes.idDrink}`}
                                         key={oneRecipe.idDrink}
                                     />
                                 )
@@ -85,7 +88,6 @@ function Home() {
                             title="alle recepten"
                         />
                     </section>
-                </div>
             </main>
         </div>
     );
