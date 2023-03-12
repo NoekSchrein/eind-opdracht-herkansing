@@ -2,6 +2,12 @@
     display: flex;
     flex-direction: row;
 }
+.mocktail-filters-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
 
 .mocktail-card-container {
     display: flex;
@@ -9,3 +15,12 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.mocktail-filters-container ul {
+    list-style: none;
+}
+
+.mocktail-card-container a, .mocktail-card-container a:hover {
+    text-decoration: none;
+}
+

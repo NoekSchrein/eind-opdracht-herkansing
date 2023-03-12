@@ -59,7 +59,6 @@ function Home() {
                         buttonText="recepten"
                         imageSrc={populairMocktails}
                         imageAlt="populaire mocktails"
-                        clickHandler={(() => navigate("/mocktails/popular"))}
                     />
                     <Article
                         className="even-article"
@@ -67,7 +66,10 @@ function Home() {
                         articleText="Bekijk de lekkerste mocktails voor in de winter"
                         buttonText="winter recepten"
                         imageSrc={winterMocktails}
-                        imageAlt="winter mocktails"/>
+                        imageAlt="winter mocktails"
+
+                    />
+
 
                     <h3 className="bottom-section-header">Nieuwste mocktail recepten</h3>
                     <section className="bottom-section">
@@ -86,6 +88,7 @@ function Home() {
                         </div>
                         <Button
                             title="alle recepten"
+                            clickHandler={(() => navigate("/mocktails"))}
                         />
                     </section>
             </main>

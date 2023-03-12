@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
+import {useNavigate} from "react-router-dom";
 
-function Login() {
+function Login({toggleLogin, isLoggedIn}) {
+    const navigate = useNavigate();
     const [errorMessages, setErrorMessages] = useState({});
-    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const database = [
         {
@@ -14,6 +15,7 @@ function Login() {
             password: "pass2"
         }
     ];
+
 
     const errors = {
         uname: "invalid username",
@@ -31,7 +33,8 @@ function Login() {
             if (userData.password !== pass.value) {
                 setErrorMessages({ name: "pass", message: errors.pass });
             } else {
-                setIsSubmitted(true);
+                toggleLogin(true);
+                navigate("/mijn-account");
             }
         } else {
             setErrorMessages({ name: "uname", message: errors.uname });
@@ -57,7 +60,7 @@ function Login() {
                     {renderErrorMessage("pass")}
                 </div>
                 <div className="button-container">
-                    <input type="submit" />
+                    <input type="submit" className="button-1"/>
                 </div>
             </form>
         </div>
@@ -68,8 +71,14 @@ function Login() {
             <h2>Login</h2>
             <div className="app">
                 <div className="login-form">
-                    <div className="title">Sign In</div>
-                    {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+                    {isLoggedIn ? <div>User is successfully logged in</div> : renderForm}
+                </div>
+                <div className="subscribe">
+                    <h3>Nog geen account?</h3>
+                    <button type="button"
+                            className="button-2"
+                            onClick={() => navigate("/account-aanmaken")}
+                    >Account aanmaken</button>
                 </div>
             </div>
         </div>

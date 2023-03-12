@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Checkbox = ({value, name, checked, label}) => {
+const Checkbox = ({value, checked, label}) => {
     return (
         <div className="checkbox-wrapper">
             <label htmlFor="filter">

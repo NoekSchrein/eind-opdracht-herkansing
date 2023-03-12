@@ -25,3 +25,33 @@
 .button-1:focus {
     background-color: #F082AC;
 }
+
+.button-2 {
+    background-color: #F6F4B8;
+    border-radius: 8px;
+    border-style: none;
+    color: #EA4C89;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 10px;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+}
+
+.button-2:hover,
+.button-2:focus {
+    background-color: #FEC36E;
+    color: #EA4C89;
+
+}

@@ -18,6 +18,7 @@
     z-index: 5;
 }
 .mocktail-card-link:hover h4 {
+    text-decoration: none;
     color: #EA4C89;
 }
 

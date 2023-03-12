@@ -25,7 +25,7 @@
     flex-shrink: 2;
 }
 
-.inner-container a:hover {
+.navigation a:hover {
     color: #FEC36E;
 }
 
@@ -34,7 +34,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-basis: 600px;
+    flex-basis: 700px;
 }
 
 .nav-list li {
