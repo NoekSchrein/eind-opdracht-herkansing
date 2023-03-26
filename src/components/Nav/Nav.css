@@ -62,11 +62,7 @@
     cursor: pointer;
 }
 
-.active-menu-link{
-
-}
-
-.default-menu-link {
+.menu-link {
     text-decoration: none;
     color: #F6F4B8;
     text-transform: uppercase;

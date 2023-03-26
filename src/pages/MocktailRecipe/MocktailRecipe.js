@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+import "./MocktailRecipe.css";
 
 const apiKey = "9973533"
 
@@ -9,6 +10,7 @@ function MocktailRecipe() {
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
     const {id} = useParams()
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchData() {
@@ -19,10 +21,6 @@ function MocktailRecipe() {
 
                 const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${id}`);
                 console.log(result.data.drinks);
-                // const mocktailList = result.data.drinks.filter((oneMocktail) => {
-                //     return oneMocktail.strAlcoholic.includes("Non alcoholic");
-                // });
-                // console.log(mocktailList);
                 setMocktailRecipe(result.data.drinks);
 
             } catch (e) {
@@ -47,7 +45,40 @@ function MocktailRecipe() {
             </span>}
             {mocktailRecipe.map((oneMocktail) => {
                 return (
-                    <h1 className="h1-vervolg">{oneMocktail.strDrink}</h1>
+                    <div key={oneMocktail.idDrink}>
+                        <h1 className="h1-vervolg">{oneMocktail.strDrink}</h1>
+                        <div className="content">
+                            <aside className="text">
+                                <table>
+                                    <tbody>
+                                        <tr><th>Ingrediënten</th></tr>
+                                        <tr><td>{oneMocktail.strIngredient1}</td><td>{oneMocktail.git}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient2}</td><td>{oneMocktail.strMeasure2}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient3}</td><td>{oneMocktail.strMeasure3}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient4}</td><td>{oneMocktail.strMeasure4}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient5}</td><td>{oneMocktail.strMeasure5}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient6}</td><td>{oneMocktail.strMeasure6}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient7}</td><td>{oneMocktail.strMeasure7}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient8}</td><td>{oneMocktail.strMeasure8}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient9}</td><td>{oneMocktail.strMeasure9}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient10}</td><td>{oneMocktail.strMeasure10}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient11}</td><td>{oneMocktail.strMeasure11}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient12}</td><td>{oneMocktail.strMeasure12}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient13}</td><td>{oneMocktail.strMeasure13}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient14}</td><td>{oneMocktail.strMeasure14}</td></tr>
+                                        <tr><td>{oneMocktail.strIngredient15}</td><td>{oneMocktail.strMeasure15}</td></tr>
+                                    </tbody>
+                                </table>
+                                <p>{oneMocktail.strInstructions}</p>
+                                <button type="button" className="button-1" onClick={()=> navigate(-1)}>Ga terug</button>
+                            </aside>
+                            <aside className="one-mocktail-img">
+                                <img src={oneMocktail.strDrinkThumb} alt="mocktail"/>
+                            </aside>
+                        </div>
+
+                    </div>
+
 
                 )
             })}

@@ -21,14 +21,14 @@ function Nav() {
                 </div>
                 <ul className="nav-list">
                     <li><NavLink
-                        className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
+                        className="menu-link"
                         to="/mocktails">
                         Recepten</NavLink>
                     </li>
                     { isAuth === true
                         ? <>
                             <li><NavLink
-                                className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
+                                className="menu-link"
                                 to="/mijn-account">
                                 Profiel
                             </NavLink></li>
@@ -41,7 +41,7 @@ function Nav() {
                             </li>
                         </>
                         : <li><NavLink
-                            className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
+                            className="menu-link"
                             to="/login">
                             Login
                         </NavLink></li>}

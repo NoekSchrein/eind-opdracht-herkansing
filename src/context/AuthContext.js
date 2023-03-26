@@ -96,5 +96,4 @@ function AuthContextProvider({children}) {
         </AuthContext.Provider>
     );
 }
-
 export default AuthContextProvider;

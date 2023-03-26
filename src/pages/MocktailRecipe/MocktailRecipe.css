@@ -1,0 +1,27 @@
+.inner-container > div {
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.content aside {
+    margin: 50px 0;
+}
+
+.content .text {
+    max-width: 50%;
+}
+
+.content .text th {
+    font-weight: 700;
+    font-size: 25px;
+    color: #EA4C89;
+}
+
+.one-mocktail-img img {
+    width: 250px;
+}

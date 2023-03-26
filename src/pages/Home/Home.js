@@ -3,10 +3,9 @@ import "./Home.css";
 import populairMocktails from "../../assets/summer-cocktails.jpg"
 import winterMocktails from "../../assets/winter-mocktail-img.webp"
 import Article from "../../components/Article/Article";
-import MocktailCard from "../../components/MocktailCard/MocktailCard";
-import Button from "../../components/Button/Button";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import Button from "../../components/Button/Button";
 
 const apiKey = "9973533"
 
@@ -76,13 +75,12 @@ function Home() {
                         <div className="bottom-section-cards">
                             {mocktailRecipes.slice(0, 3).map((oneRecipe) => {
                                 return (
-                                    <MocktailCard
-                                        imageSrc={oneRecipe.strDrinkThumb}
-                                        imageAlt={oneRecipe.strDrink}
-                                        mocktailName={oneRecipe.strDrink}
-                                        mocktailLink={`/mocktails/${mocktailRecipes.idDrink}`}
-                                        key={oneRecipe.idDrink}
-                                    />
+                                    <div className="mocktail-card" key={oneRecipe.idDrink}>
+                                        <Link to={`/mocktails/${oneRecipe.idDrink}`} className="mocktail-card-link">
+                                            <img src={oneRecipe.strDrinkThumb} alt={oneRecipe.strDrink} className="mocktail-card-image"/>
+                                            <h4 className="mocktail-card-title">{oneRecipe.strDrink}</h4>
+                                        </Link>
+                                    </div>
                                 )
                             })}
                         </div>

@@ -9,7 +9,6 @@ function Register() {
     const [password, setPassword] = useState('');
     const [loading, toggleLoading] = useState(false);
     const [error, toggleError] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
 
     async function handleSubmit() {
@@ -29,7 +28,6 @@ function Register() {
         } catch (e) {
             console.error(e);
             toggleError(true)
-            setErrorMessage("Gebruikersnaam en wachtwoord komen niet overeen");
         }
         toggleLoading(false);
     }
@@ -41,42 +39,44 @@ function Register() {
             </span>}
             <h1 className="h1-vervolg">registreren</h1>
             <p>Vul onderstaande gegevens in om een account aan te maken</p>
-            <p>Al een account? <Link to="/login">Klik hier</Link> om in te loggen</p>
+            <p className="login-link">Al een account? <Link to="/login">Klik hier</Link> om in te loggen</p>
             <form onSubmit={handleSubmit} className="register-form">
-                <label htmlFor="email-field">
-                    Emailadres:
-                    <input
-                        type="email"
-                        id="email-field"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </label>
+                <div className="form-fields">
+                    <label htmlFor="email-field">
+                        Emailadres:
+                        <input
+                            type="email"
+                            id="email-field"
+                            name="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </label>
 
-                <label htmlFor="username-field">
-                    Gebruikersnaam:
-                    <input
-                        type="text"
-                        id="username-field"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
-                </label>
+                    <label htmlFor="username-field">
+                        Gebruikersnaam:
+                        <input
+                            type="text"
+                            id="username-field"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                    </label>
 
-                <label htmlFor="password-field">
-                    Wachtwoord:
-                    <input
-                        type="password"
-                        id="password-field"
-                        name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </label>
+                    <label htmlFor="password-field">
+                        Wachtwoord:
+                        <input
+                            type="password"
+                            id="password-field"
+                            name="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </label>
+                </div>
                 {error && <p className="error">Dit account bestaat al. Probeer een ander emailadres.</p>}
                 <button
                     type="submit"
