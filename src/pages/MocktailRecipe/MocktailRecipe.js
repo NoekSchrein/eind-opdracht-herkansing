@@ -38,15 +38,19 @@ function MocktailRecipe() {
 
     }, [])
     return (
-        <div>
+        <div className="inner-container">
             {loading && <span>
                 Loading...
             </span>}
             {error && <span>
                 Er is iets misgegaan met het ophalen van de data
             </span>}
+            {mocktailRecipe.map((oneMocktail) => {
+                return (
+                    <h1 className="h1-vervolg">{oneMocktail.strDrink}</h1>
 
-            <h1>Bananen zijn krom</h1>
+                )
+            })}
         </div>
     );
 }

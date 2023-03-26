@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import "./MocktailOverview.css"
 import axios from "axios";
-import MocktailCard from "../../components/MocktailCard/MocktailCard";
 import Checkbox from "../../components/Checkbox/Checkbox";
+import {Link, useNavigate} from "react-router-dom";
+import {AuthContext} from "../../context/AuthContext";
 
 const apiKey = "9973533"
 
@@ -11,6 +12,9 @@ function MocktailOverview() {
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
     const [filter, setFilter] = useState("")
+    const navigate = useNavigate();
+    const { isAuth } = useContext(AuthContext)
+
 
     function onChangeValue(event) {
         setFilter(event.target.value);
@@ -104,9 +108,10 @@ function MocktailOverview() {
                 Er is iets misgegaan met het ophalen van de data
             </span>}
 
-            <h2>Mocktail Recepten</h2>
+            <h1 className="h1-vervolg">Mocktail Recepten</h1>
             <div className="mocktails-overview">
                 <section>
+                    {isAuth && <button type="button" onClick={() => navigate("/recept-toevoegen")} className="button-1">Recept toevoegen</button> }
                     <h4>Filters</h4>
                     <form onChange={onChangeValue} className="mocktail-filters-container">
                         <ul>
@@ -178,13 +183,12 @@ function MocktailOverview() {
                     <div className="mocktail-card-container">
                         {mocktailList.map((oneMocktail) => {
                             return (
-                                <MocktailCard
-                                    imageSrc={oneMocktail.strDrinkThumb}
-                                    imageAlt={oneMocktail.strDrink}
-                                    mocktailName={oneMocktail.strDrink}
-                                    key={oneMocktail.idDrink}
-                                    // mocktailLink={`/mocktails/${oneMocktail.idDrink}`}
-                                />
+                                <div className="mocktail-card" key={oneMocktail.idDrink}>
+                                    <Link to={`/mocktails/${oneMocktail.idDrink}`} className="mocktail-card-link">
+                                        <img src={oneMocktail.strDrinkThumb} alt={oneMocktail.strDrink} className="mocktail-card-image"/>
+                                        <h4 className="mocktail-card-title">{oneMocktail.strDrink}</h4>
+                                    </Link>
+                                </div>
                             )
                         })}
                     </div>

@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SearchBar from "../SearchBar/SearchBar";
 import {NavLink, useNavigate} from "react-router-dom";
 import "./Nav.css";
 import logo from "../../assets/logo-drink.png";
-import Button from "../Button/Button";
+import {AuthContext} from "../../context/AuthContext";
 
-function Nav({loggedIn, toggleLogin}) {
+function Nav() {
     const navigate = useNavigate();
 
-    function signOut() {
-        toggleLogin(false);
-        navigate('/')
-    }
+    const { isAuth, logout } = useContext(AuthContext);
+
 
     return (
         <div className="inner-nav-container">
@@ -27,7 +25,7 @@ function Nav({loggedIn, toggleLogin}) {
                         to="/mocktails">
                         Recepten</NavLink>
                     </li>
-                    {loggedIn === true
+                    { isAuth === true
                         ? <>
                             <li><NavLink
                                 className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
@@ -37,7 +35,7 @@ function Nav({loggedIn, toggleLogin}) {
                             <li>
                                 <button
                                     className="button-2"
-                                    onClick={signOut}>
+                                    onClick={logout}>
                                     Uitloggen
                                 </button>
                             </li>

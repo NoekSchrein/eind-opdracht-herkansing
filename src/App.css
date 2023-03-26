@@ -51,6 +51,11 @@ h1 {
     color: #FBFAF1;
 }
 
+.h1-vervolg {
+    color: #3F0D12;
+    text-align: center;
+}
+
 h2 {
     font-family: 'Rock Salt', cursive;
     font-size: 35px;
@@ -74,4 +79,8 @@ h3 {
 h4 {
     font-size: 18px;
     font-weight: 400;
+}
+
+.error {
+    color: #ff0000;
 }
