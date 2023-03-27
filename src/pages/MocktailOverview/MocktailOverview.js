@@ -5,7 +5,6 @@ import Checkbox from "../../components/Checkbox/Checkbox";
 import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
 
-const apiKey = "9973533"
 
 function MocktailOverview() {
     const [mocktailList, setMocktailList] = useState([])
@@ -47,44 +46,28 @@ function MocktailOverview() {
                 if (filter) {
                     console.log(`de filter is ${filter}`);
                     if (filter === "classics") {
-                        const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/popular.php`);
+                        const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/popular.php`);
                         setMocktailList(result.data.drinks);
                     } else if (filter === "New") {
-                        const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?f=a`);
+                        const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/search.php?f=a`);
                         const mocktails = result.data.drinks.sort((a, b) => {
                             return a.dateModified - b.dateModified
                         });
                         setMocktailList(mocktails);
                         console.log(mocktailList)
                     } else if (filter === "Simple") {
-                        const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?f=a`);
+                        const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/search.php?f=a`);
                         const mocktails = result.data.drinks.sort((a, b) => {
                             return a.strInstructions.length - b.strInstructions.length
                         });
                         setMocktailList(mocktails);
                         console.log(mocktailList)
                     } else {
-                        const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/filter.php?i=${filter}`);
+                        const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/filter.php?i=${filter}`);
                         setMocktailList(result.data.drinks);
                     }
-
-
-                    // const test = result.data.drinks.filter((item => {
-                    //     let ingredient = false
-                    //     for (const property in item) {
-                    //         if (item[property] === filter) {
-                    //             ingredient = true
-                    //         }
-                    //     }
-                    //     return ingredient;
-                    // }))
-
-                    // console.log(test);
-                    // console.log(mocktailList);
-                    // console.log(mocktailList.strInstructions)
-
                 } else {
-                    const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?f=a`);
+                    const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/search.php?f=a`);
                     console.log(result.data.drinks);
                     setMocktailList(result.data.drinks)
                 }

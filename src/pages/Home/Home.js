@@ -7,8 +7,9 @@ import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 import Button from "../../components/Button/Button";
 
-const apiKey = "9973533"
 
+
+console.log(process.env.REACT_APP_API_KEY);
 
 function Home() {
     const [mocktailRecipes, setMocktailRecipes] = useState([]);
@@ -23,7 +24,7 @@ function Home() {
             try {
                 toggleError(false);
 
-                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?f=a`);
+                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/search.php?f=a`);
                 // console.log(result.data.drinks);
                 const mocktailList = result.data.drinks.filter((oneMocktail) => {
                     return oneMocktail.strAlcoholic.includes("Non alcoholic");

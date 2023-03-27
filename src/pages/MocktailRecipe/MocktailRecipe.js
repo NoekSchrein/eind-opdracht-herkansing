@@ -3,8 +3,6 @@ import axios from "axios";
 import {useNavigate, useParams} from "react-router-dom";
 import "./MocktailRecipe.css";
 
-const apiKey = "9973533"
-
 function MocktailRecipe() {
     const [mocktailRecipe, setMocktailRecipe] = useState([])
     const [error, toggleError] = useState(false);
@@ -19,7 +17,7 @@ function MocktailRecipe() {
             try {
                 toggleError(false);
 
-                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${id}`);
+                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/lookup.php?i=${id}`);
                 console.log(result.data.drinks);
                 setMocktailRecipe(result.data.drinks);
 
