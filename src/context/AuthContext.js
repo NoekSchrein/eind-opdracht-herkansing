@@ -55,7 +55,7 @@ function AuthContextProvider({children}) {
                 ...isAuth,
                 isAuth: true,
                 user: {
-                    username: result.data.email,
+                    username: result.data.username,
                     email: result.data.email
                 },
                 status: "done"

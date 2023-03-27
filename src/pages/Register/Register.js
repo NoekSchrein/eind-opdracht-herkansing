@@ -11,7 +11,9 @@ function Register() {
     const [error, toggleError] = useState(false);
     const navigate = useNavigate();
 
-    async function handleSubmit() {
+    async function handleSubmit(e) {
+        e.preventDefault();
+
         toggleLoading(true);
 
         try {

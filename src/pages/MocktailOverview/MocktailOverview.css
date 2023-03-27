@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: row;
 }
+
+.mocktails-overview button {
+    width: 200px;
+}
+
 .mocktail-filters-container {
     display: flex;
     flex-direction: column;

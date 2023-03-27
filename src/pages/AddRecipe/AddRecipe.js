@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import "./AddRecipe.css";
+import {useNavigate} from "react-router-dom";
 
 function AddRecipe() {
     const [strDrink, setStrDrink] = useState("");
@@ -34,10 +35,11 @@ function AddRecipe() {
     const [strMeasure14, setStrMeasure14] = useState("");
     const [strMeasure15, setStrMeasure15] = useState("");
     const [strInstructions, setStrInstructions] = useState("");
+    const navigate = useNavigate();
 
 
     function handleSubmit() {
-
+        navigate("/mocktails")
     }
 
     return (

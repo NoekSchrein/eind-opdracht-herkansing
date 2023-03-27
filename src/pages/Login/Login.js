@@ -13,7 +13,9 @@ function Login() {
     const [errorMessage, setErrorMessage] = useState("")
     const navigate = useNavigate();
 
-    async function handleLogin() {
+    async function handleLogin(e) {
+        e.preventDefault();
+
         toggleLoading(true);
 
         try {
@@ -60,7 +62,7 @@ function Login() {
                 {errorMessage}
             </span>}
                 <div className="button-container">
-                    <input type="submit" className="button-1"/>
+                    <button type="submit" className="button-1">inloggen</button>
                 </div>
             </form>
         </div>

@@ -3,6 +3,7 @@ import {AuthContext} from "../../context/AuthContext";
 
 function AccountPage() {
     const {user} = useContext(AuthContext);
+    console.log(user)
     return (
         <div className="inner-container">
             <h1 className="h1-vervolg">Uw account overzicht</h1>
@@ -10,11 +11,11 @@ function AccountPage() {
                 <tbody>
                 <tr>
                     <td>Emailadres: </td>
-                    {/*<td>{user.email}</td>*/}
+                    <td>{user.email}</td>
                 </tr>
                 <tr>
                     <td>Gebruikersnaam: </td>
-                    {/*<td>{user.username}</td>*/}
+                    <td>{user.username}</td>
                 </tr>
                 </tbody>
             </table>
