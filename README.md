@@ -5,7 +5,6 @@ De Mocktail Finder is een webapplicatie waarmee je gemakkelijk en snel mocktailr
 - Installatie
 - Gebruik
 - Bijdragen
-- Licentie
 
 ## Installatie
 1. Clone de repository:
