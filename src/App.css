@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans',Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #000;
+    background-color: #FBFAF1;
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 1400px;
+    margin: 0 15px;
+}
+
+.nav-outer-container {
+    height: 120px;
+    background: rgb(254,88,160);
+    background: radial-gradient(circle, rgba(254,88,160,1) 0%, rgba(184,51,106,1) 100%);
+    justify-content: center;
+}
+
+.footer-outer-container {
+    height: 100px;
+    background: rgb(254,88,160);
+    background: radial-gradient(circle, rgba(254,88,160,1) 0%, rgba(184,51,106,1) 100%);
+}
+
+h1 {
+    font-family: 'Rock Salt', cursive;
+    font-size: 50px;
+    font-weight: lighter;
+    color: #FBFAF1;
+}
+
+.h1-vervolg {
+    color: #3F0D12;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2 {
+    font-family: 'Rock Salt', cursive;
+    font-size: 35px;
+    text-align: center;
+    color: #3F0D12;
+    margin: 25px;
+}
+
+h3 {
+    font-size: 25px;
+    color: #FBFAF1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EA4C89;
+    height: 45px;
+    width: 350px;
+    border-radius: 8px;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.error {
+    color: #ff0000;
+}

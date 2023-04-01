@@ -1,0 +1,37 @@
+.uneven-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 4rem;
+}
+
+.even-article {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: 4rem;
+}
+
+.article-img {
+    width: 700px;
+    height: 400px;
+    object-fit: cover;
+    object-position: 0 100%;
+}
+
+.article-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 350px;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 350px;
+    background-color: #faf6bf;
+    padding: 10px;
+}
+
+.article-text h4, .article-text p {
+    margin: 15px;
+}

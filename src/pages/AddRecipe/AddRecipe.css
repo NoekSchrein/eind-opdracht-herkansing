@@ -1,0 +1,19 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.ingredients input, .measurements input {
+    margin: 10px 0;
+}
+
+.measurements {
+    display: flex;
+    flex-direction: column;
+}
