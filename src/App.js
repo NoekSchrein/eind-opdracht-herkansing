@@ -31,11 +31,9 @@ function App() {
                   <Route path="/mocktails" element={<MocktailOverview/>}/>
                   <Route path="/mocktails/:id" element={<MocktailRecipe/>}/>
                   <Route path="/login" element={<Login />} />
-                  <Route path="/mijn-account" element={<AccountPage/>}/>
-                  {/*<Route path="/mijn-account" element={isAuth ? <AccountPage/> :  <Login />}/>*/}
+                  <Route path="/mijn-account" element={isAuth ? <AccountPage/> :  <Login />}/>
                   <Route path="/registreren" element={<Register/>}/>
-                  <Route path="/recept-toevoegen" element={<AddRecipe/>}/>
-                  {/*<Route path="/recept-toevoegen" element={isAuth ? <AddRecipe/> : <Login/>}/>*/}
+                  <Route path="/recept-toevoegen" element={isAuth ? <AddRecipe/> : <Login/>}/>
               </Routes>
           </main>
           <footer className="outer-container footer-outer-container">
