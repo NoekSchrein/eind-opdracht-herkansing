@@ -1,7 +1,7 @@
 # Mocktail Finder
 De Mocktail Finder is een webapplicatie waarmee je gemakkelijk en snel mocktailrecepten kunt vinden.
 
-![img.png](img.png)
+![img.png](src/assets/img.png)
 
 ## Inhoudsopgave
 - Installatie
