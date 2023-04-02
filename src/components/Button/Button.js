@@ -16,9 +16,3 @@ function Button({title, clickHandler}) {
 }
 
 export default Button;
-
-
-
-
-
-
