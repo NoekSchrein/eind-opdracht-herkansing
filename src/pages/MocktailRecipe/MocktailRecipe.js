@@ -2,6 +2,11 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {useNavigate, useParams} from "react-router-dom";
 import "./MocktailRecipe.css";
+import {
+    FacebookIcon, FacebookShareButton,
+    PinterestShareButton, PinterestIcon,
+    WhatsappShareButton, WhatsappIcon, TwitterShareButton, TwitterIcon,
+} from "react-share";
 
 function MocktailRecipe() {
     const [mocktailRecipe, setMocktailRecipe] = useState([])
@@ -49,35 +54,109 @@ function MocktailRecipe() {
                             <aside className="text">
                                 <table>
                                     <tbody>
-                                        <tr><th>Ingrediënten</th></tr>
-                                        <tr><td>{oneMocktail.strIngredient1}</td><td>{oneMocktail.git}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient2}</td><td>{oneMocktail.strMeasure2}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient3}</td><td>{oneMocktail.strMeasure3}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient4}</td><td>{oneMocktail.strMeasure4}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient5}</td><td>{oneMocktail.strMeasure5}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient6}</td><td>{oneMocktail.strMeasure6}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient7}</td><td>{oneMocktail.strMeasure7}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient8}</td><td>{oneMocktail.strMeasure8}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient9}</td><td>{oneMocktail.strMeasure9}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient10}</td><td>{oneMocktail.strMeasure10}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient11}</td><td>{oneMocktail.strMeasure11}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient12}</td><td>{oneMocktail.strMeasure12}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient13}</td><td>{oneMocktail.strMeasure13}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient14}</td><td>{oneMocktail.strMeasure14}</td></tr>
-                                        <tr><td>{oneMocktail.strIngredient15}</td><td>{oneMocktail.strMeasure15}</td></tr>
+                                    <tr>
+                                        <th>Ingrediënten</th>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient1}</td>
+                                        <td>{oneMocktail.strMeasure1}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient2}</td>
+                                        <td>{oneMocktail.strMeasure2}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient3}</td>
+                                        <td>{oneMocktail.strMeasure3}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient4}</td>
+                                        <td>{oneMocktail.strMeasure4}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient5}</td>
+                                        <td>{oneMocktail.strMeasure5}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient6}</td>
+                                        <td>{oneMocktail.strMeasure6}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient7}</td>
+                                        <td>{oneMocktail.strMeasure7}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient8}</td>
+                                        <td>{oneMocktail.strMeasure8}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient9}</td>
+                                        <td>{oneMocktail.strMeasure9}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient10}</td>
+                                        <td>{oneMocktail.strMeasure10}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient11}</td>
+                                        <td>{oneMocktail.strMeasure11}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient12}</td>
+                                        <td>{oneMocktail.strMeasure12}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient13}</td>
+                                        <td>{oneMocktail.strMeasure13}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient14}</td>
+                                        <td>{oneMocktail.strMeasure14}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{oneMocktail.strIngredient15}</td>
+                                        <td>{oneMocktail.strMeasure15}</td>
+                                    </tr>
                                     </tbody>
                                 </table>
                                 <p>{oneMocktail.strInstructions}</p>
-                                <button type="button" className="button-1" onClick={()=> navigate(-1)}>Ga terug</button>
+                                <div className="socialmedia">
+                                    <FacebookShareButton
+                                        url={`${oneMocktail.strDrinkThumb}`}
+                                        quote={'Kijk wat een heerlijk mocktailrecept ik heb gevonden! Moet je zeker ook proberen'}
+                                        hashtag="#mocktails4life"
+                                    >
+                                        <FacebookIcon size={32} round/>
+                                    </FacebookShareButton>
+                                    <PinterestShareButton
+                                        url={oneMocktail.strDrinkThumb}
+                                        media={oneMocktail.strDrinkThumb}
+                                        description={"Kijk wat een heerlijk mocktailrecept ik heb gevonden! Moet je zeker ook proberen"}
+                                    >
+                                        <PinterestIcon size={32} round/>
+                                    </PinterestShareButton>
+                                    <WhatsappShareButton
+                                        url={`localhost:3000/mocktails/${id}`}
+                                        title={"Kijk wat een heerlijk mocktailrecept ik heb gevonden! Moet je zeker ook proberen:"}
+                                    >
+                                        <WhatsappIcon size={32} round/>
+                                    </WhatsappShareButton>
+                                    <TwitterShareButton
+                                        url={`localhost:3000/mocktails/${id}`}
+                                        title={`Check deze mocktail eens! Zeker een aanrader: ${oneMocktail.strDrink}`}
+                                        hashtag="#mocktails4life"
+                                    >
+                                        <TwitterIcon size={32} round/>
+                                    </TwitterShareButton>
+                                </div>
+                                <button type="button" className="button-1" onClick={() => navigate(-1)}>Ga terug
+                                </button>
                             </aside>
                             <aside className="one-mocktail-img">
                                 <img src={oneMocktail.strDrinkThumb} alt="mocktail"/>
                             </aside>
                         </div>
-
                     </div>
-
-
                 )
             })}
         </div>
